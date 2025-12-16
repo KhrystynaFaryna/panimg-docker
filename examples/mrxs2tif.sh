@@ -25,7 +25,7 @@ for mrxs in "$INPUT_DIR"/*.mrxs; do
 
     # Create isolated temp dirs
     tmp_in=$(mktemp -d)
-    tmp_out="tmp_out"
+    tmp_out=$(mktemp -d)
 
     # Copy the .mrxs file
     cp -a "$mrxs" "$tmp_in/"
