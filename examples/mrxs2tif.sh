@@ -36,17 +36,17 @@ for mrxs in "$INPUT_DIR"/*.mrxs; do
     else
         echo "WARNING: Sidecar directory not found for $base (expected: $sidecar_dir). Trying conversion anyway."
     fi
-	
-    ls "$tmp_in" >&2
+    
+    ls $tmp_in
 
     # Convert (tmp_in contains only this slide bundle)
 
 
     panimg convert "$tmp_in" "$tmp_out"
-	
-    ls "$tmp_out" >&2
     
-	
+    ls $tmp_out
+    
+    
 
     # panimg outputs a random-name .tif; grab the first tif created
     tif_file=$(find "$tmp_out" -maxdepth 2 -type f \( -iname "*.tif" -o -iname "*.tiff" \) | head -n 1)
